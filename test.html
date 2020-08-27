@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apple vs Banana Classifier</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav id="navbar">
+        <h1>REC<span class="highlight">TIFY</span></h1>
+    </nav>
+                <div id="output-container" style="margin:auto;text-align:center">
+                <canvas id="output" height="250" width="250"></canvas>
+                <div id="buttons">
+                <button id="btn" class="button is-dark">Annotate</button>
+                <input id="in" class="is-primary" type="file" multiple>
+                
+            </div>
+            <button id="left">Previous Image</button>
+            <button id="right">Next Image</button>
+            <textarea name="" id="json" cols="30" rows="10"></textarea>
+            <button id="copy" onclick="copy();">Copy JSON</button>
+
+            <div id="labelButtons">
+                
+            </div>
+            <p id="alert"></p>
+            </div>
+
+    </section>
+    <script src="drawRect.js"></script>
+</body>
+</html>

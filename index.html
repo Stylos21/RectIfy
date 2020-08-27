@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RectIfy</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link href="https://fonts.googleapis.com/css3?family=Poppins:wght@200&display=swap" rel="stylesheet"> -->
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <h1>REC<span class="highlight">TIFY</span></h1>
+    </nav>
+    <section id="addLabels">
+        <h1>Add your labels to prepare your data.</h1>
+        <p id="alert"></p>
+        <input type="text" id="labelInput">
+        <button id="submit">Submit</button>
+        <a id="annotation" onclick="redirect();">Start annotating</a>
+
+        <section id="labels">
+            <ul id="labelList">
+                
+               
+            </ul>
+        </section>
+        <div id="modal">
+            <div id="content">
+            <h1>Edit your Label</h1>
+
+            <div class="flex">
+            <input id="newLabel" style="z-index: 5;">
+            <button onclick="editLabel(this.id)" class="changeLabel" style="z-index: 5;">Submit</button>
+        </div>
+        <button id="x" onclick="toggleModal()"><i class="fas fa-times"></i></button>
+    </div>
+        </div>
+    </section>
+   
+    <script src="index.js"></script>
+</body>
+
+</html>

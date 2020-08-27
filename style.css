@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+nav {
+    color: white;
+    background-color: black;
+    width:100%;
+    margin:0;
+    padding:10px;   
+}
+
+nav h1{
+    letter-spacing: 15px;
+    margin-left: 20px;
+    font-size:30px;
+}
+.highlight{
+    color:gold;
+}
+#addLabels{
+    text-align: center;
+
+}
+#addLabels input {
+    padding:20px;
+    border-radius: 5px;
+    border-color: #000;
+    width:40%;
+    
+}
+button#submit{
+    padding:10px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: white;
+}
+#addLabels button#submit:hover{
+    background-color:gold;
+    animation: hoverEffect 0.3s;
+}
+button{
+    outline:none;
+}
+#addLabels button#submit:active{
+    background-color:rgb(175, 149, 0);
+}
+#labels ul{
+    text-decoration: none;
+    list-style: none;
+    
+}
+#labels ul li{
+    background-color:#ddd;
+    padding:5px;
+    width:65%;
+    
+    margin:50px auto;
+    align-items: center;
+    /* justify-items: start; */
+    display:flex;
+    /* margin:5px; */
+
+    /* float:left; */
+} 
+#labels ul li p{
+    font-size:36px;
+    /* float:left; */
+    text-align: left;
+    font-weight:bold;
+    margin-left:5%;
+}
+#labels ul li .icon{
+    font-size:36px;
+    margin:5px;
+    display:flex;
+}
+#labels ul li .icon i{
+    margin:30px;
+    box-shadow: none;
+
+}
+button.edit:hover {
+    background-color:#1dc2a1;
+    animation: editHover .5s;
+
+}
+
+button.trash:hover {
+    background-color:#e33e32;
+    animation: trashHover .5s;
+}
+button.trash{
+    border-radius: 10px;
+    border-color:black;
+    box-shadow:5px 10px grey;
+
+}
+button.trash:active{
+    background-color:#86221b
+}
+button.edit{
+    border-radius: 10px;
+    border-color:black;
+    box-shadow:5px 10px grey;
+}
+button.edit:active{
+    background-color:#0a5a4a
+}
+@keyframes hoverEffect{
+    from{background-color:white}
+    to{background-color: gold;}
+}
+@keyframes hoverEffectCloseModal{
+    from{color:white}
+    to{color: gold;}
+}
+@keyframes editHover {
+    from{background-color: #fff}
+    to {background-color: #1dc2a1;}
+}
+@keyframes trashHover {
+    from{background-color: #fff}
+    to {background-color: #e33e32;}
+}
+@keyframes editLabelHover {
+    from{background-color: #fff}
+    to {background-color: gold;}
+}
+@keyframes closeHover{
+    from{color:white;}
+
+    to{color:gold;}
+}
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+#modal #content{
+    height:320px;
+    width:640px;
+    padding:20px;
+    margin:auto;
+    background-color:white;
+    margin-top:50px;
+    position:relative;
+
+}
+#modal .flex{
+    display:flex;
+}
+#modal button.changeLabel{
+    margin-left:auto;
+    padding:10px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: white;  
+    width:25%;
+}
+#modal button.changeLabel:hover{
+    background-color: gold;
+    animation: editLabelHover .5s;
+}
+#modal button.changeLabel:active{
+    background-color: rgb(175, 149, 0);
+}
+#modal input{
+    width:65%;
+
+}
+#x{
+     position:absolute;
+     top:0;
+    right:0; 
+    font-size: 36px;
+    color:black;
+    background-color: white;
+    outline:none;
+    border:none;
+    /* color:gold; */
+    margin:25px;
+    border-radius: 10px;
+
+}
+#x:hover{
+
+    color:gold;
+    animation: closeHover .5s;
+}
+
+#output-container{
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+#buttons{
+    display:flex;
+}
+#buttons button, input{
+    margin-right:10px;
+    padding:20px;
+
+}
+
+/* canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+} */
+.label-button{
+    padding:10px 20px;
+    background-color:white;
+    outline:none;
+    border:solid black;
+    border-radius:10px;
+
+}
+.label-button:hover{
+    background-color:gold;
+    animation: editLabelHover .5s;
+}
+.label-button:active{
+    background-color:rgb(175, 149, 0)
+}
+.selected{
+    background-color:gold;
+}
+#annotation{
+    padding:10px;
+    border:solid black;
+    border-radius:10px;
+}
+#annotation:hover{
+    background-color: gold;
+    animation: editLabelHover .5s;
+}
+#annotation:active{
+    background-color: rgb(175, 149, 0);
+}

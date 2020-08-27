@@ -1,0 +1,14 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "Following electron tutorial to make another application using Electron.",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Joshua",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^9.2.1"
+  }
+}

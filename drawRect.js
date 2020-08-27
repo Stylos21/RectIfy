@@ -20,9 +20,12 @@ document.getElementById("btn").addEventListener("click", (e) => {
   e.preventDefault();
   const filee = document.querySelector("input[type=file]").files;
   let objects = dataPrep(filee.length);
-  let oldX = (oldY = 0);
-  let x = (y = 0);
-  let width = (height = 0);
+  let oldX = 0;
+  let oldY = 0;
+  let x = 0;
+  let y = 0;
+  let width = 0;
+  let height = 0;
   displayImage(imageIndex, filee);
 
   let isMouseDown = false;
@@ -32,7 +35,7 @@ document.getElementById("btn").addEventListener("click", (e) => {
   function mouseDown(e) {
     oldX = e.clientX - boundingBoxes.left;
     oldY = e.clientY - boundingBoxes.top;
-    objects[imageIndex].objectExists = 1;
+    objects[parseInt(imageIndex)].objectExists = 1;
     isMouseDown = true;
     output.onmousemove = (e) => {
       x = e.clientX - boundingBoxes.left;
@@ -43,7 +46,7 @@ document.getElementById("btn").addEventListener("click", (e) => {
         context.fillStyle = "#000";
         context.clearRect(0, 0, output.width, output.height);
         context.strokeRect(oldX, oldY, width, height);
-        modifyJSON(objects, imageIndex, oldX, oldY, width, height, label);
+        modifyJSON(objects, parseInt(imageIndex), oldX, oldY, width, height, label);
 
       }
     };
@@ -91,29 +94,29 @@ function displayImage(imageIndex, file) {
     // output.style.height = "250px";
   };
 
-  if (file[imageIndex]) reader.readAsDataURL(file[imageIndex]);
+  if (file[parseInt(imageIndex)]) reader.readAsDataURL(file[parseInt(imageIndex)]);
   else output.src = "";
 }
 previousImage.addEventListener("click", (e) => {
   if (imageIndex >= 1) {
     imageIndex--;
-    displayImage(imageIndex, document.querySelector("input[type=file]").files);
+    displayImage(parseInt(imageIndex), document.querySelector("input[type=file]").files);
   }
 });
 nextImage.addEventListener("click", (e) => {
   if (imageIndex < imageLen) {
     imageIndex++;
     context.clearRect(0, 0, output.width, output.height);
-    displayImage(imageIndex, document.querySelector("input[type=file]").files);
+    displayImage(parseInt(imageIndex), document.querySelector("input[type=file]").files);
   }
 });
 
 function modifyJSON(obj, imageIndex, x, y, width, height, label) {
-  obj[imageIndex]["midPointX"] = (x + width / 2) / output.width;
-  obj[imageIndex]["midPointY"] = (y + height / 2) / output.height;
-  obj[imageIndex]["width"] = Math.abs(width / output.width);
-  obj[imageIndex]["height"] = Math.abs(height / output.height);
-  obj[imageIndex][label] = 1;
+  obj[parseInt(imageIndex)]["midPointX"] = (x + width / 2) / output.width;
+  obj[parseInt(imageIndex)]["midPointY"] = (y + height / 2) / output.height;
+  obj[parseInt(imageIndex)]["width"] = Math.abs(width / output.width);
+  obj[parseInt(imageIndex)]["height"] = Math.abs(height / output.height);
+  obj[parseInt(imageIndex)][label] = 1;
   textarea.innerHTML = JSON.stringify(obj);
 }
 function selectLabel(id){

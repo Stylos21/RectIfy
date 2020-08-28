@@ -10,7 +10,7 @@ let boundingBoxes = output.getBoundingClientRect();
 let label = labels[0];
 let imageIndex = 0;
 let imageLen = 0;
-for (let i = 0; i < labels.length; i++){
+for (let i = 0; i < labels.length; i++) {
   labelButtons.innerHTML += `
   <button id="${labels[i]}" class="label-button" onclick="selectLabel(this.id);">${labels[i]}</button>
   `
@@ -27,10 +27,10 @@ function dataPrep(length) {
     height: 0,
   };
   let arr = [];
-  for(let i = 0; i < labels.length; i++){
+  for (let i = 0; i < labels.length; i++) {
     object[labels[i]] = 0;
   }
-  for (j = 0; j < length; j++) {
+  for (let j = 0; j < length; j++) {
     arr.push(JSON.parse(JSON.stringify(object)));
   }
   return arr;
@@ -57,9 +57,12 @@ function displayImage(imageIndex, file) {
     // output.style.height = "250px";
   };
 
-  if (file[imageIndex]) reader.readAsDataURL(file[imageIndex]);
-  else output.src = "";
-}
+  if (file[imageIndex]) {
+    reader.readAsDataURL(file[imageIndex])
+  } else {
+    output.src = ""
+  }
+};
 previousImage.addEventListener("click", (e) => {
   if (imageIndex >= 1) {
     imageIndex--;
@@ -82,21 +85,20 @@ function modifyJSON(obj, imageIndex, x, y, width, height, label) {
   obj[imageIndex][label] = 1;
   textarea.innerHTML = JSON.stringify(obj);
 }
-function selectLabel(id){
-  console.log("AAAAA")
+function selectLabel(id) {
   let buttons = document.getElementsByClassName("label-button");
   label = id;
-  for(let i = 0; i < buttons.length; i++){
-    if(buttons[i].id == label){
+  for (let i = 0; i < buttons.length; i++) {
+    if (buttons[i].id == label) {
       buttons[i].classList.add("selected");
     }
-    else{
+    else {
       buttons[i].classList.remove("selected");
 
     }
   }
 }
-function copy(){
+function copy() {
   textarea.select();
   document.execCommand("copy");
 }

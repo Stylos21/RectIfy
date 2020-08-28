@@ -58,11 +58,11 @@ function displayImage(imageIndex, file) {
   };
 
   if (file[imageIndex]) {
-    reader.readAsDataURL(file[imageIndex])
+    reader.readAsDataURL(file[imageIndex]);
   } else {
-    output.src = ""
+    output.src = "";
   }
-};
+}
 previousImage.addEventListener("click", (e) => {
   if (imageIndex >= 1) {
     imageIndex--;

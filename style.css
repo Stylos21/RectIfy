@@ -108,7 +108,7 @@ button.trash {
 }
 
 button.trash:active {
-  background-color: #86221b;
+  background-color: #86221b
 }
 
 button.edit {
@@ -118,74 +118,82 @@ button.edit {
 }
 
 button.edit:active {
-  background-color: #0a5a4a;
+  background-color: #0a5a4a
 }
 
 @keyframes hoverEffect {
   from {
-    background-color: white;
+  background-color: white
   }
   to {
-    background-color: gold;
+  background-color: gold;
   }
 }
 
 @keyframes hoverEffectCloseModal {
   from {
-    color: white
+  color: white
   }
   to {
-    color: gold;
+  color: gold;
   }
 }
 
 @keyframes editHover {
   from {
-    background-color: #fff
+  background-color: #fff
   }
   to {
-    background-color: #1dc2a1;
+  background-color: #1dc2a1;
   }
 }
 
 @keyframes trashHover {
   from {
-    background-color: #fff
+  background-color: #fff
   }
   to {
-    background-color: #e33e32;
+  background-color: #e33e32;
   }
 }
 
 @keyframes editLabelHover {
   from {
-    background-color: #fff
+  background-color: #fff
   }
   to {
-    background-color: gold;
+  background-color: gold;
   }
 }
 
 @keyframes closeHover {
   from {
-    color: white;
+  color: white;
   }
   to {
-    color: gold;
+  color: gold;
   }
 }
 
 #modal {
   display: none;
+  /* Hidden by default */
   position: fixed;
+  /* Stay in place */
   z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
+  /* Full width */
   height: 100%;
+  /* Full height */
   overflow: auto;
+  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
+  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 #modal #content {
@@ -219,9 +227,11 @@ button.edit:active {
 #modal button.changeLabel:active {
   background-color: rgb(175, 149, 0);
 }
+
 #modal input {
   width: 65%;
 }
+
 #x {
   position: absolute;
   top: 0;
@@ -240,6 +250,7 @@ button.edit:active {
   color: gold;
   animation: closeHover .5s;
 }
+
 #output-container {
   padding: 0;
   margin: auto;
@@ -252,6 +263,7 @@ button.edit:active {
   left: 0;
   right: 0;
 }
+
 #buttons {
   display: flex;
 }
@@ -260,6 +272,21 @@ button.edit:active {
   margin-right: 10px;
   padding: 20px;
 }
+
+/* canvas {
+  padding: 0;
+  margin: auto;
+  display: block;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+} */
+
 .label-button {
   padding: 10px 20px;
   background-color: white;
